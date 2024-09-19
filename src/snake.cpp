@@ -48,17 +48,18 @@ void Snake::UpdateBody(SDL_Point &current_head_cell, SDL_Point &prev_head_cell) 
   body.push_back(prev_head_cell);
 
   if (!growing) {
-    // Remove the tail from the vector.
+    // Remove the tail from the vector
     body.erase(body.begin());
   } else {
     growing = false;
     size++;
   }
 
-  // Check if the snake has died.
+  // Check if the snake has collided with its own body
   for (auto const &item : body) {
     if (current_head_cell.x == item.x && current_head_cell.y == item.y) {
       alive = false;
+      return; // JM - Snake is dead, exit function
     }
   }
 }

@@ -1,12 +1,20 @@
-# CPPND: Capstone Snake Game Example
+# CPPND: Capstone Snake Game
 
-This is a starter repo for the Capstone project in the [Udacity C++ Nanodegree Program](https://www.udacity.com/course/c-plus-plus-nanodegree--nd213). The code for this repo was inspired by [this](https://codereview.stackexchange.com/questions/212296/snake-game-in-c-with-sdl) excellent StackOverflow post and set of responses.
+This is the Capstone project in the [Udacity C++ Nanodegree Program](https://www.udacity.com/course/c-plus-plus-nanodegree--nd213). The code for this repo was inspired by [this](https://codereview.stackexchange.com/questions/212296/snake-game-in-c-with-sdl) excellent StackOverflow post and set of responses.
 
 <img src="snake_game.gif"/>
 
-The Capstone Project gives you a chance to integrate what you've learned throughout this program. This project will become an important part of your portfolio to share with current and future colleagues and employers.
+In this project, I used what I learnt in the C++ Nanodegree to extend the Snake game. 
 
-In this project, you can build your own C++ application or extend this Snake game, following the principles you have learned throughout this Nanodegree Program. This project will demonstrate that you can independently create applications using a wide range of C++ features.
+## New Features
+* Obstacles:
+  * Obstacles are now part of the game and are added to the board every time the snake eats food. 
+* Game modes:
+	The game comes with 4 possible modee, which are selected in the console before the game initializes. The modes are: 
+  * 1: Classic Snake
+  * 2: Snake With Static Obstacles
+  * 3: Snake with randomly moving obstacles
+  * 4: Snake with Obstacles that chase the head of the snake round the board. 
 
 ## Dependencies for Running Locally
 * cmake >= 3.7
@@ -30,17 +38,25 @@ In this project, you can build your own C++ application or extend this Snake gam
 3. Compile: `cmake .. && make`
 4. Run it: `./SnakeGame`.
 
+## Rubric Points
+### Loops, Functions, I/O
+* Project accepts user input to determine game mode
+* Project is organised into functions. 
+* Project uses arrays, vectors and constant variables. 
 
-## CC Attribution-ShareAlike 4.0 International
+### Object Oriented Programming
+* All functions within classes have their purpose and function documented.
+* Project is organized into classes, with 
+* Constructor and destructor of the game class have been expanded. 
+
+### Memory Management 
+* Destructor of the game class is used to tidy up threads.
+* References are called to manage implementation of obstacles vector and manage the threads. 
+* Snake is implemented as a unique pointer. 
+
+### Concurrency
+* Project splits the snake and the obstacle movement into two threads and runs them concurrently. 
+* Mutex and a lock is used for this, as is a conditional variable. 
 
 
-Shield: [![CC BY-SA 4.0][cc-by-sa-shield]][cc-by-sa]
 
-This work is licensed under a
-[Creative Commons Attribution-ShareAlike 4.0 International License][cc-by-sa].
-
-[![CC BY-SA 4.0][cc-by-sa-image]][cc-by-sa]
-
-[cc-by-sa]: http://creativecommons.org/licenses/by-sa/4.0/
-[cc-by-sa-image]: https://licensebuttons.net/l/by-sa/4.0/88x31.png
-[cc-by-sa-shield]: https://img.shields.io/badge/License-CC%20BY--SA%204.0-lightgrey.svg
